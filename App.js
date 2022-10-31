@@ -1,18 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { Switch,Text, View } from 'react-native';
-import Card from './components/Card';
+import { SafeAreaView, Text, View } from 'react-native';
+import DarkModeToggle from './components/DarkModeToggle';
 import { useColorScheme } from 'nativewind'
-
+import ProductsList from './components/ProductsList';
 
 export default function App() {
-  const {colorScheme,toggleColorScheme } = useColorScheme()
+  const {colorScheme } = useColorScheme();
 
   return (
-    <View className="flex-1 p-4 bg-blue-500 dark:bg-black items-center justify-center ">
-      <StatusBar style="auto" />
-      <Switch value={colorScheme === 'light'} onChange={toggleColorScheme} />
-        <Card/>
-        <Text className="text-yellow-200 text-3xl text-center">Open up App.js to start working on your app!</Text>
-    </View>
+    <SafeAreaView className="flex-1 bg-yellow-400 dark:bg-black items-center justify-start pt-16">
+      <StatusBar style={colorScheme === "dark"?'light':'dark'} />
+
+        <DarkModeToggle/>
+        <ProductsList />
+        
+    </SafeAreaView>
   )
 }
