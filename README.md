@@ -1,3 +1,3 @@
 # DESCRIPTION
 
-#### a reference to the way to use tailwindcss in a react-native project
+#### a reference to the way to use tailwindcss in a react-native & expo project
